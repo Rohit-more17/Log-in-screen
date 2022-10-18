@@ -1,0 +1,52 @@
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import Account from "../components/Account";
+import MenuItem from "../components/MenuItem";
+
+const DashBoardScreen = (props) => {
+  return (
+    <View style={styles.ViewMain}>
+      <Text style={styles.dashboard}>Dashboard</Text>
+      <TouchableOpacity>
+        <Account type="Savings Account" iconName="account"></Account>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Account type="Current Account" iconName="account-box"></Account>
+      </TouchableOpacity>
+      <TouchableOpacity>
+        <Account type="Fixed Deposit" iconName="cash-multiple"></Account>
+      </TouchableOpacity>
+      <View style={styles.Menu}>
+        <MenuItem type="Balance" iconName="wallet"></MenuItem>
+        <MenuItem type="Profile" iconName="solution1"></MenuItem>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  dashboard: {
+    marginBottom: 90,
+    fontSize: 30,
+  },
+  ViewMain: {
+    flexDirection: "column",
+    flex: 1,
+    borderWidth: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  Menu: {
+    //     position: "absolute",
+    //     justifyContent: "flex-end",
+    justifyContent: "space-between",
+    top: 170,
+    height: 100,
+    width: 350,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+});
+
+export default DashBoardScreen;
